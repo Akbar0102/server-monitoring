@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"db_monitoring_covid.pasiens"}],"uuid":"b46c16004b8e46d2997ed16487529251"}

@@ -1,0 +1,48 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <!-- Button trigger modal -->
+      <div class="row">
+        <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#add-modal">
+          Add
+        </button>
+        <form action="/admin/form/download" method="GET">
+          <button type="submit" class="btn btn-primary">
+            Download Rekap
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Nomor Pasien</th>
+              <th>Usia (th)</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let i=0; i<pasien.length; i++){ %>
+              <tr>
+                <td><%= moment(new Date(pasien[i].tanggal)).format("DD-MM-YYYY") %></td>
+                <td><%= pasien[i].nomor_pasien %></td>
+                <td><%= pasien[i].usia %></td>
+                <td><%= pasien[i].status %></td>
+                <td>
+                  <form action="/admin/form/<%= pasien[i].id %>?_method=DELETE" method="POST">
+                    <a href="javascript:void(0)" type="button" class="btn btn-warning btn-circle btn-sm button-update" data-id="<%= pasien[i].id %>" data-tanggal="<%= pasien[i].tanggal %>" data-usia="<%= pasien[i].usia %>" data-status="<%= pasien[i].status %>" data-pasien="<%= pasien[i].nomor_pasien %>"><i class="fas fa-edit"></i></a>
+                    <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
+                  </form>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+  </div>
