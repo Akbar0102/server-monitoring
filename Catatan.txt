@@ -3,5 +3,6 @@ aplikasi monitoring covid dibuat menggunakan node js, langkah instalasi:
 2. database menggunakan mongodb, bisa langsung restore db yang digunakan, dengan perintah: mongorestore dump
 3. untuk menjalankan aplikasinya: npm run dev (dengan nodemon) kalau tidak menggunakan nodemon bisa dengan perintah: npm start
 4. menu download rekap akan otomatis mendownload dengan nama file data.csv, yang tersimpan di dalam direktori utama aplikasi
+5. url aplikasi ada di http://localhost:3000/admin/dashboard
 
 Terima kasih
